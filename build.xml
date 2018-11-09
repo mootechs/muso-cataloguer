@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<project name="crossSWT">
+<taskdef name="swtjar" classname="org.swtjar.ant.SWTJarTask" classpath="./gui/swtjar.jar"/>
+
+        <!-- Package cross platform SWT Jar -->
+        <swtjar jarfile="./jars/cross_cataloguer.jar" targetmainclass="cataloguer_swt" swtversion="4.8">
+
+                  <!-- Application Classes -->
+                  <fileset dir="./target/classes/" includes="**/*.class" />
+  
+                  <!-- SWT Jars -->
+                  <fileset dir="./gui" includes="swt-*-4.8.jar" />
+        </swtjar>
+</project>

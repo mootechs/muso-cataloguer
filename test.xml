@@ -1,0 +1,131 @@
+<project name="RandomApp" basedir="." default="clean-build">
+
+    <property name="src.dir" value="src" />
+
+    <!-- Define the necessary paths -->
+    <property name="build.dir" value="bin_temp" />
+    <property name="lib.dir" value="lib" />
+    <property name="lib.deploy.dir" value="lib_swt" />
+    <property name="classes.dir" value="${build.dir}/classes" />
+    <property name="jar.dir" value="${build.dir}/jar" />
+
+    <!-- Define the main class -->
+    <property name="main-class" value="org.baz.desktop.randomapp.RandomApp" />
+
+    <!-- Define the class path -->
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar" />
+        <fileset dir="${lib.deploy.dir}" includes="**/swt_linux_gtk_x86.jar" />
+    </path>
+
+    <!-- Clean previously built files -->
+    <target name="clean">
+        <delete dir="${build.dir}" />
+    </target>
+
+    <!-- Compile the project -->
+    <target name="compile">
+        <mkdir dir="${classes.dir}" />
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" includeantruntime="false" />
+    </target>
+
+    <!-- Define classpath and create the jar folder -->
+    <target name="pre_jar" depends="compile">
+        <pathconvert property="manifest.classpath" pathsep=" ">
+            <path refid="classpath" />
+            <mapper>
+                <chainedmapper>
+                    <flattenmapper />
+                    <globmapper from="*.jar" to="*.jar" />
+                </chainedmapper>
+            </mapper>
+        </pathconvert>
+
+        <mkdir dir="${jar.dir}" />
+    </target>
+
+    <!-- Create the jar files -->
+    <target name="jar" depends="pre_jar">
+        <!-- Linux 32bit -->
+        <jar destfile="${jar.dir}/${ant.project.name}_linux_gtk_x86.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader" />
+                <attribute name="Rsrc-Main-Class" value="${main-class}" />
+                <attribute name="Class-Path" value="." />
+                <attribute name="Rsrc-Class-Path" value="./ ${manifest.classpath}" />
+            </manifest>
+
+            <zipgroupfileset dir="${lib.dir}" includes="**/jar-in-jar-loader.jar" />
+            <zipfileset dir="${lib.deploy.dir}" includes="**/swt_linux_gtk_x86.jar" />
+            <zipfileset dir="${lib.dir}" includes="**/*.jar" excludes="**/jar-in-jar-loader.jar" />
+        </jar>
+        <!-- Linux 64bit -->
+        <jar destfile="${jar.dir}/${ant.project.name}_linux_gtk_x64.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader" />
+                <attribute name="Rsrc-Main-Class" value="${main-class}" />
+                <attribute name="Class-Path" value="." />
+                <attribute name="Rsrc-Class-Path" value="./ ${manifest.classpath}" />
+            </manifest>
+
+            <zipgroupfileset dir="${lib.dir}" includes="**/jar-in-jar-loader.jar" />
+            <zipfileset dir="${lib.deploy.dir}" includes="**/swt_linux_gtk_x64.jar" />
+            <zipfileset dir="${lib.dir}" includes="**/*.jar" excludes="**/jar-in-jar-loader.jar" />
+        </jar>
+        <!-- Windows 32bit -->
+        <jar destfile="${jar.dir}/${ant.project.name}_win32_x86.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader" />
+                <attribute name="Rsrc-Main-Class" value="${main-class}" />
+                <attribute name="Class-Path" value="." />
+                <attribute name="Rsrc-Class-Path" value="./ ${manifest.classpath}" />
+            </manifest>
+
+            <zipgroupfileset dir="${lib.dir}" includes="**/jar-in-jar-loader.jar" />
+            <zipfileset dir="${lib.deploy.dir}" includes="**/swt_win32_x86.jar" />
+            <zipfileset dir="${lib.dir}" includes="**/*.jar" excludes="**/jar-in-jar-loader.jar" />
+        </jar>
+        <!-- Windows 64bit -->
+        <jar destfile="${jar.dir}/${ant.project.name}_win32_x64.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader" />
+                <attribute name="Rsrc-Main-Class" value="${main-class}" />
+                <attribute name="Class-Path" value="." />
+                <attribute name="Rsrc-Class-Path" value="./ ${manifest.classpath}" />
+            </manifest>
+
+            <zipgroupfileset dir="${lib.dir}" includes="**/jar-in-jar-loader.jar" />
+            <zipfileset dir="${lib.deploy.dir}" includes="**/swt_win32_x64.jar" />
+            <zipfileset dir="${lib.dir}" includes="**/*.jar" excludes="**/jar-in-jar-loader.jar" />
+        </jar>
+        <!-- MacOS 32bit -->
+        <jar destfile="${jar.dir}/${ant.project.name}_macos_x86.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader" />
+                <attribute name="Rsrc-Main-Class" value="${main-class}" />
+                <attribute name="Class-Path" value="." />
+                <attribute name="Rsrc-Class-Path" value="./ ${manifest.classpath}" />
+            </manifest>
+
+            <zipgroupfileset dir="${lib.dir}" includes="**/jar-in-jar-loader.jar" />
+            <zipfileset dir="${lib.deploy.dir}" includes="**/swt_macosx_x86.jar" />
+            <zipfileset dir="${lib.dir}" includes="**/*.jar" excludes="**/jar-in-jar-loader.jar" />
+        </jar>
+        <!-- MacOS 64bit -->
+        <jar destfile="${jar.dir}/${ant.project.name}_macos_x64.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader" />
+                <attribute name="Rsrc-Main-Class" value="${main-class}" />
+                <attribute name="Class-Path" value="." />
+                <attribute name="Rsrc-Class-Path" value="./ ${manifest.classpath}" />
+            </manifest>
+
+            <zipgroupfileset dir="${lib.dir}" includes="**/jar-in-jar-loader.jar" />
+            <zipfileset dir="${lib.deploy.dir}" includes="**/swt_macosx_x64.jar" />
+            <zipfileset dir="${lib.dir}" includes="**/*.jar" excludes="**/jar-in-jar-loader.jar" />
+        </jar>
+    </target>
+
+    <target name="clean-build" depends="clean,jar" />
+
+</project>

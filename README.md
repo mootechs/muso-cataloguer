@@ -14,9 +14,14 @@ are filled. The lists discipline, genre, and notation all allow multiple
 item selection, while the list license only allows one. Below is a list of information
 pertaining to the fields for each standard.
 
-## Limitations
+## Cross-Platform Status
 
-Current version is untested on platforms other than Windows 10 x64.
+Current version is untested on platforms other than Windows 10 x64. SWT libraries for each platform are found in /gui/. Information 
+on rebuilding a crossplatform package can be found at https://mchr3k.github.io/swtjar/. The file build.xml is an antfile script
+that builds the cataloguer swtjar. Please note that this script does not package all dependencies into the output jar file. My solution 
+(that I am not completely sure works) is to build the executable jar using Eclipse, and then drag all the files from 
+the output jar of build.xml into the one from Eclipse. This might be a little confusing, so please contact me (Jonathan)
+if you have any questions.
 
 ## Usage
 
@@ -110,3 +115,9 @@ java -jar -XstartOnFirstThread muso_cataloguer.jar
 	<muso:uniform_title>
     The uniform title of an object. Drawn from the Library of Congress Authorities.
     Vocabulary: https://authorities.loc.gov/
+	
+##Plans
+
+I am hoping someone can either figure out how to correctly write a cross-platform SWT application or write an antbuild script that 
+creates an executable jar file for each target platform. If you are looking to build a cross-platform GUI in Java in the future,
+you might want to look into using Swing over SWT, which has native Java support.

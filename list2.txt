@@ -1,0 +1,100 @@
+cc-by-nc
+cc-by-nc-nd
+cc-by-nc-sa
+cc-by-nd
+copyright
+patent
+trademark
+
+graphic
+letter
+mensural
+solmization
+staff
+tablature
+tonic sol-fa
+neumatic
+encoded
+
+Visual Artist
+Author 
+Editor 
+Publisher 
+Translator 
+Creator 
+Etcher 
+Engraver 
+Owner 
+Artist 
+Architect 
+Binder 
+Book designer 
+Book producer  
+Calligrapher 
+Cartographer 
+Collector 
+Colorist 
+Commentator for written text 
+Compiler 
+Compositor 
+Creator 
+Dubious author 
+Facsimilist 
+Illuminator 
+Illustrator 
+Lithographer 
+Printer 
+Printer of plates 
+Printmaker 
+Repository 
+Rubricator 
+Scribe
+Sculptor
+Type designer
+Typographer
+Wood engraver
+Wood cutter
+
+list_4.setItems(new String[] {"Visual Artist", "Author ", "Editor ", "Publisher ", "Translator ", "Creator ", "Etcher ", "Engraver ", "Owner ", "Artist ", "Architect ", "Binder ", "Book designer ", "Book producer  ", "Calligrapher ", "Cartographer ", "Collector ", "Colorist ", "Commentator for written text ", "Compiler ", "Compositor ", "Creator ", "Dubious author ", "Facsimilist ", "Illuminator ", "Illustrator ", "Lithographer ", "Printer ", "Printer of plates ", "Printmaker ", "Repository ", "Rubricator ", "Scribe", "Sculptor", "Type designer", "Typographer", "Wood engraver", "Wood cutter"});
+
+<role:ART>
+<role:AUT>
+<role:EDT>
+<role:PBL>
+<role:TRL> 
+<role:CRE>
+<role:ETR>
+<role:EGR>
+<role:OWN>
+<role:ART>
+<role:ARC>
+<role:BND>
+<role:BKD>
+<role:BKP>
+<role:CLL>
+<role:CTG>
+<role:COL>
+<role:CLR> 
+<role:CWT>
+<role:COM>
+<role:CMT>
+<role:CRE>
+<role:DUB>
+<role:FAC>
+<role:ILU>
+<role:ILL>
+<role:LTG>
+<role:PRT>
+<role:POP>
+<role:PRM>
+<role:RPS>
+<role:RBR>
+<role:SCR>
+<role:SCL>
+<role:TYD>
+<role:TYG> 
+<role:WDE>
+<role:WDC>
+		list.setItems(new String[] {"<role:ART>", "<role:AUT>", "<role:EDT>", "<role:PBL>", "<role:TRL> ", "<role:CRE>", "<role:ETR>", "<role:EGR>", "<role:OWN>", "<role:ART>", "<role:ARC>", "<role:BND>", "<role:BKD>", "<role:BKP>", "<role:CLL>", "<role:CTG>", "<role:COL>", "<role:CLR> ", "<role:CWT>", "<role:COM>", "<role:CMT>", "<role:CRE>", "<role:DUB>", "<role:FAC>", "<role:ILU>", "<role:ILL>", "<role:LTG>", "<role:PRT>", "<role:POP>", "<role:PRM>", "<role:RPS>", "<role:RBR>", "<role:SCR>", "<role:SCL>", "<role:TYD>", "<role:TYG> ", "<role:WDE>", "<role:WDC>"});
+
+created_label

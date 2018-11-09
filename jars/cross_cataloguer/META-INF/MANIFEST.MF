@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.5
+Created-By: 11.0.1+13-LTS (Oracle Corporation)
+SwtJar-TargetMainClass: cataloguer_swt
+SwtJar-SwtVersion: 4.8
+Main-Class: org.swtjar.SWTLoader
+
