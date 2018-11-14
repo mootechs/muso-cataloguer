@@ -19,8 +19,8 @@ pertaining to the fields for each standard.
 Current version is untested on platforms other than Windows 10 x64. SWT libraries for each platform are found in /gui/. Information 
 on rebuilding a crossplatform package can be found at https://mchr3k.github.io/swtjar/. The file build.xml is an antfile script
 that builds the cataloguer swtjar. Please note that this script does not package all dependencies into the output jar file. My solution 
-(that I am not completely sure works) is to build the executable jar using Eclipse, and then drag all the files from 
-the output jar of build.xml into the one from Eclipse. This might be a little confusing, so please contact me (Jonathan)
+(that I am not completely sure works) is to build the executable jar using Eclipse, and then include all the files from 
+the output jar of build.xml into the one from Eclipse. This might be a little confusing, so please contact me 
 if you have any questions.
 
 ## Usage
@@ -29,7 +29,7 @@ Must have Java SE Version 8 installed (SE 1.8.0). Will not work with Java 9 and 
 
 ### Windows and Linux:
 
-Open command prompt, navigate to the jar file and do:
+Open command prompt or terminal, navigate to the jar file and do:
 
 ```
 java -jar muso_cataloguer.jar
@@ -43,7 +43,7 @@ Will only work on x64 machines because SWT x86 libraries are deprecated. Do:
 java -jar -XstartOnFirstThread muso_cataloguer.jar
 ```
 
-##ARC Schema
+## ARC Schema
 
 	 <collex:archive>
 

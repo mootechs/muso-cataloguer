@@ -447,7 +447,6 @@ public class cataloguer_swt {
 		grpMusoStandards.setText("MuSO Standards");
 		FormData fd_grpMusoStandards = new FormData();
 		fd_grpMusoStandards.bottom = new FormAttachment(btnRun, -6);
-		fd_grpMusoStandards.right = new FormAttachment(btnRun, 0, SWT.RIGHT);
 		fd_grpMusoStandards.left = new FormAttachment(0, 10);
 		grpMusoStandards.setLayoutData(fd_grpMusoStandards);
 		
@@ -460,11 +459,11 @@ public class cataloguer_swt {
 		license_list.setBounds(450, 23, 215, 105);
 		
 		grpArcStandards = new Group(shlMusoCatologuer, SWT.NONE);
+		fd_grpMusoStandards.right = new FormAttachment(grpArcStandards, 0, SWT.RIGHT);
 		fd_grpMusoStandards.top = new FormAttachment(grpArcStandards, 6);
 		grpArcStandards.setText("ARC Schema");
 		FormData fd_grpArcStandards = new FormData();
 		fd_grpArcStandards.bottom = new FormAttachment(100, -330);
-		fd_grpArcStandards.right = new FormAttachment(btnRun, 0, SWT.RIGHT);
 		fd_grpArcStandards.left = new FormAttachment(0, 10);
 		
 		lblCreated = new Label(grpMusoStandards, SWT.NONE);
@@ -672,6 +671,7 @@ public class cataloguer_swt {
 		tblclmnNewColumn_1.setText("Name");
 	
 		group = new Group(shlMusoCatologuer, SWT.NONE);
+		fd_grpArcStandards.right = new FormAttachment(group, 0, SWT.RIGHT);
 		fd_grpArcStandards.top = new FormAttachment(group, 6);
 		FormData fd_group = new FormData();
 		fd_group.bottom = new FormAttachment(100, -690);
