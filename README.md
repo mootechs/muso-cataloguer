@@ -35,7 +35,7 @@ Open command prompt or terminal, navigate to the jar file and do:
 java -jar muso_cataloguer.jar
 ```
 
-### Mac OSX:
+### Mac OS X:
 
 Will only work on x64 machines because SWT x86 libraries are deprecated. Do:
 
@@ -87,7 +87,7 @@ java -jar -XstartOnFirstThread muso_cataloguer.jar
     estc -- English Short Title Catalog; closed
     GLA -- Great Lakes Project; closed 
 	
-###MuSO Metadata Standards
+## MuSO Metadata Standards
 
 	<muso:created>
     Element used when contributor wants to preserve a date other than that of a 
@@ -116,7 +116,7 @@ java -jar -XstartOnFirstThread muso_cataloguer.jar
     The uniform title of an object. Drawn from the Library of Congress Authorities.
     Vocabulary: https://authorities.loc.gov/
 	
-##Plans
+## Plans
 
 I am hoping someone can either figure out how to correctly write a cross-platform SWT application or write an antbuild script that 
 creates an executable jar file for each target platform. If you are looking to build a cross-platform GUI in Java in the future,
